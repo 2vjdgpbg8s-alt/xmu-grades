@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>厦门大学统一身份认证</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:100vw; height:100vh; overflow:hidden; font-family:"Microsoft YaHei","PingFang SC",sans-serif; }
+
+  body {
+    background: url('bg-clean.png') no-repeat center center;
+    background-size: 100% 100%;
+  }
+
+  #username {
+    position: absolute;
+    left: 56.97vw; top: 32.93vh;
+    width: 10.17vw; height: 2.69vh;
+    border: 1px solid #B6B9BD; border-radius: 3px;
+    outline: none; padding: 0 8px;
+    font-size: max(13px, 1.4vh); color: #222;
+    font-family: inherit;
+    background: #FAFBFC;
+    z-index: 2;
+  }
+  #username:focus { border-color:#163C81; box-shadow:0 0 0 2px rgba(22,60,129,.08); background:#fff; }
+
+  #password {
+    position: absolute;
+    left: 56.97vw; top: 38.31vh;
+    width: 10.17vw; height: 2.69vh;
+    border: 1px solid #B6B9BD; border-radius: 3px;
+    outline: none; padding: 0 8px;
+    font-size: max(13px, 1.4vh); color: #222;
+    font-family: inherit;
+    background: #FAFBFC;
+    z-index: 2;
+  }
+  #password:focus { border-color:#163C81; box-shadow:0 0 0 2px rgba(22,60,129,.08); background:#fff; }
+
+  #login-btn {
+    position: absolute;
+    left: 40.69vw; top: 55.04vh;
+    width: 30.52vw; height: 5.85vh;
+    background: #163C81; color: #fff;
+    border: none; border-radius: 3px;
+    font-size: max(15px, 1.6vh); font-weight: 600;
+    cursor: pointer; letter-spacing: 4px;
+    font-family: inherit;
+    z-index: 1;
+  }
+  #login-btn:hover { opacity: 0.93; }
+</style>
+</head>
+<body>
+
+<input type="text" id="username" value="15220242201909" autocomplete="off">
+<input type="password" id="password" value="Lin050920" autocomplete="off">
+<button id="login-btn" onclick="doLogin()">登 录</button>
+
+<script>
+function doLogin() {
+  var u = document.getElementById('username').value.trim();
+  var p = document.getElementById('password').value.trim();
+  if (!u || !p) { alert('请输入账号和密码'); return; }
+  if (u !== '15220242201909' || p !== 'Lin050920') { alert('账号或密码错误'); return; }
+  window.location.href = '厦大教务成绩查询-v2.html';
+}
+</script>
+</body>
+</html>
